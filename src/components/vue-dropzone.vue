@@ -103,7 +103,7 @@ export default {
       return
     }
     // Use custom function for modal confirm with dropzone
-    Dropzone.confirm = this.confirm;
+    Dropzone.confirm = this.onConfirm;
     this.hasBeenMounted = true
 
     this.dropzone = new Dropzone(this.$refs.dropzoneElement, this.dropzoneSettings)
