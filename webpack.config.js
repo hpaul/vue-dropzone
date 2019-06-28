@@ -22,9 +22,7 @@ module.exports = {
         sourceMap: true,
         parallel: 4,
         uglifyOptions: {
-          warnings: false,
           compress: {
-            warnings: false
           },
         },
       })

@@ -54,6 +54,16 @@ export default {
       type: Boolean,
       default: false,
       required: false
+    },
+    onConfirm: {
+      type: Function,
+      default: (question, accepted, rejected) => {
+        if (window.confirm(question)) {
+          return accepted();
+        } else if (rejected != null) {
+          return rejected();
+        }
+      }
     }
   },
   data() {
@@ -92,6 +102,8 @@ export default {
     if (this.$isServer && this.hasBeenMounted) {
       return
     }
+    // Use custom function for modal confirm with dropzone
+    Dropzone.confirm = this.confirm;
     this.hasBeenMounted = true
 
     this.dropzone = new Dropzone(this.$refs.dropzoneElement, this.dropzoneSettings)

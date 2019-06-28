@@ -22,6 +22,7 @@ export default {
         ['destroy-dropzone', 'Boolean','True', 'Destroy the dropzone object when the component is destroyed.', 'False'],
         ['duplicate-check','Boolean','False','Check if added file is duplicate, in already dropped files in dropzone','False'],
         ['use-custom-slot','Boolean','False','Use a custom slot for the default message area','False'],
+        ['on-confirm', 'Function', 'Window alert box', 'Change default alert function of dropzone to a custom one', 'False']
       ]
     }
   },
